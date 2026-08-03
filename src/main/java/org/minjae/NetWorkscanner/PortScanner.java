@@ -4,6 +4,23 @@ package org.minjae.NetWorkscanner;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
+
+class ScanTask implements Runnable {
+
+    private String ip;
+    private int port;
+
+    public ScanTask(String ip, int port) {
+        this.ip = ip;
+        this.port = port;
+    }
+
+    @Override
+    public void run() {
+        PortScanner.scanPort(ip, port);
+    }
+}
+
 public class PortScanner
 {
     public static void main(String[] args) {
@@ -22,13 +39,9 @@ public class PortScanner
         System.out.println();
         System.out.println("Scanning Start...");
         System.out.println();
-        for(int port= startPort; port<=endPort; port++)
+        for (int port = startPort; port <= endPort; port++) 
         {
-            final int currentPort=port;
-
-            Thread thread=new Thread(()->{
-                scanPort(target,currentPort);
-            });
+            Thread thread = new Thread(new ScanTask(target, port));
 
             thread.start();
         }
