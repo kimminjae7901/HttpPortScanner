@@ -9,13 +9,13 @@ class ScanTask implements Runnable {
 
     private String ip;
     private int port;
-
+    
     public ScanTask(String ip, int port) {
         this.ip = ip;
         this.port = port;
     }
 
-    @Override
+    @Override   
     public void run() {
         PortScanner.scanPort(ip, port);
     }
