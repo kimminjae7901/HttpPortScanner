@@ -15,7 +15,7 @@ public class HttpClient {
             System.out.println("도메인을 입력하시오: ");
             String host=scanner.nextLine();
 
-            Socket socket = new Socket(host, 80);
+            Socket socket = new Socket(host, 8080);
 
             OutputStream out = socket.getOutputStream();
             

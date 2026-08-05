@@ -10,7 +10,9 @@ public class HttpServer {
     {
         try {
             ServerSocket server=new ServerSocket(8080);
+            System.out.println("Server started : 8080");
             Socket socket = server.accept();
+            System.out.println("Client connected");
             BufferedReader reader =
                 new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
@@ -32,6 +34,9 @@ public class HttpServer {
 
             out.write(response.getBytes());
             out.flush();
+
+            socket.close();
+            server.close();
         } 
         catch (Exception e) {
         }
