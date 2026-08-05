@@ -5,6 +5,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class HttpServer {
     public static void main(String[] args)
     {
@@ -24,7 +28,11 @@ public class HttpServer {
             }
 
             OutputStream out=socket.getOutputStream();
-            String body="<h1>Hello</h1>";
+            Path path=Paths.get("src\\main\\java\\org\\minjae\\HttpServer\\WebServer.html");
+
+            String html = Files.readString(path);
+
+            String body=html;
             String response =
                 "HTTP/1.1 200 OK\r\n" +
                 "Content-Type: text/html\r\n" +
