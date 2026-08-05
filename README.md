@@ -26,10 +26,16 @@ TCP/IP와 HTTP의 동작 원리를 이해하기 위해 Java의 Socket API를 사
 - InputStream / OutputStream 사용
 
 
+# 3. HTTP Server
+
+- Java Socket과 ServerSocket을 이용하여 간단한 HTTP 서버를 구현
+- HTTP 요청을 받고 요청 헤더를 출력
+- HTTP 응답을 생성하여 클라이언트에 전송
+- HTML 파일을 웹 브라우저 페이지에 표시
+
 
 추가 예정 프로젝트..
 
-- HTTP Server
 - TCP Chat Program
 - File Transfer
 - Banner Grabber
