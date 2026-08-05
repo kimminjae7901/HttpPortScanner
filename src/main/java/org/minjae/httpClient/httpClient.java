@@ -1,4 +1,4 @@
-package org.minjae.httpClient;
+package org.minjae.HttpClient;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class httpClient {
+public class HttpClient {
 
     public static void main(String[] args) {
 
